@@ -25,7 +25,7 @@ $(function() {
 function login() {
 	$.ajax({
 		url: '/login',
-		type: 'POST',
+		type: 'GET',
 		data: {
 			username: $('#username').val(),
 			password: $('#password').val(),
