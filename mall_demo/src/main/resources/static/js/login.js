@@ -24,7 +24,7 @@ $(function() {
 // 登录
 function login() {
 	$.ajax({
-		url: '/login',
+		url: '/doLogin',
 		type: 'GET',
 		data: {
 			username: $('#username').val(),
@@ -35,7 +35,8 @@ function login() {
 
 		},
 		success: function(json){
-			if (json.code == 1) {
+			console.log(json);
+			if (json.code == '0') {
 				location.href = json.data;
 			} else {
 				alert(json.data);

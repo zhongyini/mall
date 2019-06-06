@@ -1,6 +1,6 @@
 package com.macro.mall.service.impl;
 
-import com.aliyun.oss.OSSClient;
+//import com.aliyun.oss.OSSClient;
 import com.aliyun.oss.common.utils.BinaryUtil;
 import com.aliyun.oss.model.MatchMode;
 import com.aliyun.oss.model.PolicyConditions;
@@ -24,28 +24,28 @@ import java.util.Date;
 public class OssServiceImpl implements OssService {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(OssServiceImpl.class);
-	@Value("${aliyun.oss.policy.expire}")
-	private int ALIYUN_OSS_EXPIRE;
-	@Value("${aliyun.oss.maxSize}")
-	private int ALIYUN_OSS_MAX_SIZE;
-	@Value("${aliyun.oss.callback}")
-	private String ALIYUN_OSS_CALLBACK;
-	@Value("${aliyun.oss.bucketName}")
-	private String ALIYUN_OSS_BUCKET_NAME;
-	@Value("${aliyun.oss.endpoint}")
-	private String ALIYUN_OSS_ENDPOINT;
-	@Value("${aliyun.oss.dir.prefix}")
-	private String ALIYUN_OSS_DIR_PREFIX;
+//	@Value("${aliyun.oss.policy.expire}")
+//	private int ALIYUN_OSS_EXPIRE;
+//	@Value("${aliyun.oss.maxSize}")
+//	private int ALIYUN_OSS_MAX_SIZE;
+//	@Value("${aliyun.oss.callback}")
+//	private String ALIYUN_OSS_CALLBACK;
+//	@Value("${aliyun.oss.bucketName}")
+//	private String ALIYUN_OSS_BUCKET_NAME;
+//	@Value("${aliyun.oss.endpoint}")
+//	private String ALIYUN_OSS_ENDPOINT;
+//	@Value("${aliyun.oss.dir.prefix}")
+//	private String ALIYUN_OSS_DIR_PREFIX;
 
-	@Autowired
-	private OSSClient ossClient;
+//	@Autowired
+//	private OSSClient ossClient;
 
 	/**
 	 * 签名生成
 	 */
 	@Override
 	public OssPolicyResult policy() {
-		OssPolicyResult result = new OssPolicyResult();
+		/*OssPolicyResult result = new OssPolicyResult();
 		// 存储目录
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 		String dir = ALIYUN_OSS_DIR_PREFIX+sdf.format(new Date());
@@ -80,12 +80,13 @@ public class OssServiceImpl implements OssService {
 		} catch (Exception e) {
 			LOGGER.error("签名生成失败", e);
 		}
-		return result;
+		return result;*/
+		return null;
 	}
 
 	@Override
 	public OssCallbackResult callback(HttpServletRequest request) {
-		OssCallbackResult result= new OssCallbackResult();
+		/*OssCallbackResult result= new OssCallbackResult();
 		String filename = request.getParameter("filename");
 		filename = "http://".concat(ALIYUN_OSS_BUCKET_NAME).concat(".").concat(ALIYUN_OSS_ENDPOINT).concat("/").concat(filename);
 		result.setFilename(filename);
@@ -93,7 +94,8 @@ public class OssServiceImpl implements OssService {
 		result.setMimeType(request.getParameter("mimeType"));
 		result.setWidth(request.getParameter("width"));
 		result.setHeight(request.getParameter("height"));
-		return result;
+		return result;*/
+		return null;
 	}
 
 }

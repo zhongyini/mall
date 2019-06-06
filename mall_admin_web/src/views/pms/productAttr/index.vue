@@ -168,7 +168,8 @@
           if (valid) {
             let data = new URLSearchParams();
             data.append("name",this.productAttrCate.name);
-            if(this.dialogTitle==="添加品牌"){
+            console.log(this.dialogTitle);
+            if(this.dialogTitle==="添加类型"){
               createProductAttrCate(data).then(response=>{
                 this.$message({
                   message: '添加成功',
